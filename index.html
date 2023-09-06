@@ -12,6 +12,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Código Bootstrap -->
     <link rel="stylesheet" href="style.css">
+     <!-- Código Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Código Manifest -->
+    <!-- Script Manifest -->
+    <script>
+       	window.addEventListener('load', () => {
+			  registerSW();
+			});
+		 
+			// Register the Service Worker
+			async function registerSW() {
+			  if ('serviceWorker' in navigator) {
+				try {
+				  await navigator
+						.serviceWorker
+						.register('serviceworker.js');
+				}
+				catch (e) {
+				  console.log('SW registration failed');
+				}
+			  }
+			}
+    </script>
+    <!-- Script Manifest -->
     <script src="menu.js" defer></script>
     <title>Meu Portifolio - Vanitas</title>
 </head>
